@@ -226,22 +226,6 @@ median(imp.steps.sum[,2])
 
 ```r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 imputed.data2 = mutate(imputed.data, dayofweek = weekdays(date))
 lut = c("Monday" = "weekday", "Tuesday" = "weekday", "Wednesday" = "weekday", "Thursday" = "weekday", "Friday" = "weekday", "Saturday" = "weekend", "Sunday" = "weekend")
 imputed.data2$dayofweek = lut[imputed.data2$dayofweek]
