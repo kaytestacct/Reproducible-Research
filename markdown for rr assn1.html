@@ -413,21 +413,7 @@ median(imp.steps.sum[,2])
 <h4>1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.</h4>
 
 <pre><code class="r">library(dplyr)
-</code></pre>
-
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;
-## 
-## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag
-## 
-## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union
-</code></pre>
-
-<pre><code class="r">imputed.data2 = mutate(imputed.data, dayofweek = weekdays(date))
+imputed.data2 = mutate(imputed.data, dayofweek = weekdays(date))
 lut = c(&quot;Monday&quot; = &quot;weekday&quot;, &quot;Tuesday&quot; = &quot;weekday&quot;, &quot;Wednesday&quot; = &quot;weekday&quot;, &quot;Thursday&quot; = &quot;weekday&quot;, &quot;Friday&quot; = &quot;weekday&quot;, &quot;Saturday&quot; = &quot;weekend&quot;, &quot;Sunday&quot; = &quot;weekend&quot;)
 imputed.data2$dayofweek = lut[imputed.data2$dayofweek]
 imputed.data2$dayofweek = as.factor(imputed.data2$dayofweek)
